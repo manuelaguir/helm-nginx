@@ -4,11 +4,11 @@ autoscaling:
   maxReplicas: 100
   minReplicas: 1
   targetCPUUtilizationPercentage: 80
-fullnameOverride: ""
+fullnameOverride: "<+pipeline.variables.fullnameOverride>"
 image:
   pullPolicy: IfNotPresent
   repository: nginx
-  tag: ""
+  tag: "<+pipeline.variables.image.tag>"
 imagePullSecrets: []
 ingress:
   annotations: {}
@@ -21,7 +21,7 @@ ingress:
         servicePort: 80
       path: /
   tls: []
-nameOverride: ""
+nameOverride: "<+pipeline.variables.nameOverride>"
 nodeSelector: {}
 podAnnotations: {}
 podSecurityContext: {}
