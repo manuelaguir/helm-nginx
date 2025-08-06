@@ -42,6 +42,7 @@ spec:
               path: /
               port: http
             terminationGracePeriodSeconds: 30  
+            tolerations:
           readinessProbe:
             httpGet:
               path: /
@@ -56,4 +57,4 @@ spec:
       affinity:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      tolerations:
+  
